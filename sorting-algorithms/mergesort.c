@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 
 void merge(int arr[], int p, int q, int r) {
 
@@ -6,7 +7,8 @@ void merge(int arr[], int p, int q, int r) {
   int n1 = q - p + 1;
   int n2 = r - q;
 
-  int L[n1], M[n2]; //3 , 3
+  int *L = (int*)malloc(n1*sizeof(int));// 3
+  int *M = (int*)malloc(n2*sizeof(int));// 3
 
   for (int i = 0; i < n1; i++)
     L[i] = arr[p + i]; // L[0, 2, 1] => A[0, 2, 1] => [-6, 3, 20]
